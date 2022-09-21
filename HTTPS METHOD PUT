@@ -20,3 +20,6 @@ it('Update user', () => {
            expect(response.body.name).to.eq(newUser.name)
        })
    })
+   ------TASK--------
+   JSON Schema adalah kosakata yang memungkinkan Anda membuat anotasi dan memvalidasi dokumen JSON. Ini menjelaskan format data Anda yang ada dengan dokumentasi yang jelas, dapat dibaca manusia dan mesin untuk validasi struktural lengkap,
+   berguna untuk pengujian otomatis dan memvalidasi data yang dikirimkan klien.

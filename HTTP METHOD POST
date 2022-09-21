@@ -17,3 +17,25 @@ it('Add a new user', () => {
            expect(response.status).equal(201)
        })
    })
+   Tugas
+Dari kode diatas. Tambahkan assertion untuk memastikan bahwa data yang disimpan benar-benar telah tersimpan. 
+Assertion dapat berupa name & job.
+--->  /// <reference types="cypress" />
+
+describe('Create New User', () => {
+    it('Add a new user', () => {
+        var user = {
+            "name": 'Steve ardiyanto',
+            "job": 'QA Engineer'
+        }
+        cy.request('POST', 'https:reqres.in/api/users', user).then((response) => {
+            expect(response.status).equal(201)
+        })
+        cy.request('POST', 'https:reqres.in/api/users', user).then((respone) => {
+            expect(respone.body).to.have.property('name', 'Steve ardiyanto')
+        })
+        cy.request('POST', 'https:reqres.in/api/users', user).then((respone) => {
+            expect(respone.body).to.have.property('job', 'QA Engineer')
+        })
+    });
+});

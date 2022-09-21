@@ -1,0 +1,19 @@
+Check First in Postman
+Base URL: https://reqres.in/api
+Endpoint: users
+Request Body: 
+{
+   "name": "morpheus",
+   "job": "leader"
+}
+Method: POST
+---------------> write code > -----------
+it('Add a new user', () => {
+       var user = {
+           "name": 'Fathur Rohim',
+           "job": 'Test Engineer'
+       } 
+       cy.request('POST', 'https:reqres.in/api/users', user).then((response) => {
+           expect(response.status).equal(201)
+       })
+   })
